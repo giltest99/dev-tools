@@ -23,11 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-screen flex flex-col`}
       >
-        {children}
+        <header className="w-full flex justify-center">Header</header>
+        <main className="flex-1 container mx-auto px-2 lg:p-0">{children}</main>
+        <footer className="w-full flex justify-center">
+          <span>Dev tools &copy;</span>
+          <span>{new Date().getFullYear()}</span>
+        </footer>
       </body>
     </html>
   );
