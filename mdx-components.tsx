@@ -24,8 +24,30 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </pre>
     ),
-    code: ({ children }) => <code className="p-1 rounded-md">{children}</code>,
-    img: ({ src, alt }) => <Image src={src} alt={alt} />,
+    img: ({ src = "", alt = "" }) => (
+      <Image
+        src={src}
+        alt={alt}
+        width={800}
+        height={600}
+        className="w-full h-auto mx-auto my-4 rounded-md shadow-md"
+      />
+    ),
+    a: ({ children, href }) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 underline my-6 inline-block"
+      >
+        {children}
+      </a>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-8 border-purple-500 bg-purple-50 p-4 italic my-4 rounded-r-lg shadow-md">
+        {children}
+      </blockquote>
+    ),
 
     ...components,
   };
