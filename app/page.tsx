@@ -1,9 +1,9 @@
-
+import Heading1 from "@/components/Heading1";
 
 export default function Home() {
   return (
     <>
-      <h1>Home page</h1>
+      <Heading1 text="Home page !" />
     </>
   );
 }
