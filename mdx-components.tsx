@@ -10,13 +10,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </main>
     ),
     h1: ({ children }) => (
-      <h1 className="text-2xl font-bold mb-4">{children}</h1>
+      <h1 className="text-4xl font-bold mb-4">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-xl font-bold mb-2">{children}</h2>
+      <h2 className="text-2xl font-bold mb-2">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-lg font-semibold mb-1">{children}</h3>
+      <h3 className="text-xl font-semibold mb-1">{children}</h3>
     ),
     p: ({ children }) => <p className="text-base mb-2">{children}</p>,
     pre: ({ children }) => (
@@ -26,16 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     code: ({ children }) => <code className="p-1 rounded-md">{children}</code>,
     img: ({ src, alt }) => <Image src={src} alt={alt} />,
-    a: ({ children, href }) => (
-      <a
-        href={href}
-        className="text-blue-500 hover:text-blue-700 underline my-2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    ),
+
     ...components,
   };
 }
